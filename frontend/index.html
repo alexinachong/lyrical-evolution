@@ -10,6 +10,7 @@
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script type="text/javascript" src="./bundle.js"></script>
+    <!-- <script type="text/javascript" src="./javascripts/index.js"></script> -->
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/wordcloud.js"></script>
@@ -28,7 +29,28 @@
 
     <div class="decade-selector-container">
       <section class="decade-selector">
-        <button class="decade-selector-item decade-selector-button tablink decade-selector-red" onclick="openDecade(event,'1940s')">1940s</button>
+        <a class="decade-selector-item decade-selector-selected" onClick="changeDecade('1940s')">1940s</a>
+        <a class="decade-selector-item" onClick="changeDecade('1950s')">1950s</a>
+      </section>
+    </div>
+
+
+    <!-- <div class="decade-selector-container">
+      <section class="decade-selector">
+        <a class="decade-selector-item decade-selector-button tablink decade-selector-selected" onclick="changeDecade('1940s')">1940s</a>
+        <a class="decade-selector-item decade-selector-button tablink" onclick="changeDecade('1950s')">1950s</a>
+        <a class="decade-selector-item decade-selector-button tablink" onclick="changeDecade('1960s')">1960s</a>
+        <a class="decade-selector-item decade-selector-button tablink" onclick="changeDecade('1970s')">1970s</a>
+        <a class="decade-selector-item decade-selector-button tablink" onclick="changeDecade('1980s')">1980s</a>
+        <a class="decade-selector-item decade-selector-button tablink" onclick="changeDecade('1990s')">1990s</a>
+        <a class="decade-selector-item decade-selector-button tablink" onclick="changeDecade(2000s')">2000s</a>
+        <a class="decade-selector-item decade-selector-button tablink" onclick="changeDecade('2010s')">2010s</a>
+      </section>
+    </div> -->
+
+    <!-- <div class="decade-selector-container">
+      <section class="decade-selector">
+        <button class="decade-selector-item decade-selector-button tablink decade-selector-selected" onclick="openDecade(event,'1940s')">1940s</button>
         <button class="decade-selector-item decade-selector-button tablink" onclick="openDecade(event,'1950s')">1950s</button>
         <button class="decade-selector-item decade-selector-button tablink" onclick="openDecade(event,'1960s')">1960s</button>
         <button class="decade-selector-item decade-selector-button tablink" onclick="openDecade(event,'1970s')">1970s</button>
@@ -37,20 +59,23 @@
         <button class="decade-selector-item decade-selector-button tablink" onclick="openDecade(event,'2000s')">2000s</button>
         <button class="decade-selector-item decade-selector-button tablink" onclick="openDecade(event,'2010s')">2010s</button>
       </section>
-    </div>
+    </div> -->
 
     <br />
 
-    <!-- <div id="1940s" class="w3-container w3-border city">
-    <h2>London</h2>
-    <p>London is the capital city of England.</p>
-  </div>
+    <p id="decade-name"></p>
 
-  <div id="Paris" class="w3-container w3-border city" style="display:none">
+
+    <div id="1940s" class="decade-selector-container decade-selector-border year">
+      <h2>London</h2>
+      <p>London is the capital city of England.</p>
+    </div>
+
+  <div id="1950s" class="decade-selector-container decade-selector-border year" style="display:none">
     <h2>Paris</h2>
     <p>Paris is the capital of France.</p>
   </div>
-
+<!--
   <div id="Tokyo" class="w3-container w3-border city" style="display:none">
     <h2>Tokyo</h2>
     <p>Tokyo is the capital of Japan.</p>
@@ -60,5 +85,6 @@
     <div id="wordcloud" style="width:75%; height:400px;"></div>
 
     <script type="text/javascript" src="./javascripts/highcharts.js"></script>
+    <script type="text/javascript" src="./javascripts/index.js"></script>
   </body>
 </html>
