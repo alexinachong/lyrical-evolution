@@ -1,0 +1,58 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: #e4edf4;
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #4682B4;
+}
+
+a:hover {
+  color: #38678F;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.nav a {
+  padding-left: 15px;
+}
+
+.description {
+  text-align: center;
+  padding: 10px;
+}
+
+.decade-selector-container  {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.decade-selector {
+  width: 750px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.decade-selector button {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+#wordcloud {
+  margin: 0 auto;
+}
