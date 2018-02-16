@@ -14,7 +14,7 @@
     "build": "webpack --watch",
     "start": "node app.js",
     "start:debug": "DEBUG=* node app.js",
-    "postInstall": "npm run build"
+    "postInstall": "build"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
