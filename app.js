@@ -19,8 +19,8 @@ app.use(express.static('frontend'));
 
 app.get('/decade/:decade', (req, res) => {
   let decade = req.params.decade;
-  knex('decades').where({decade: decade}).first('word_counts').limit(1000).then((wc) => {
-    let array = JSON.parse(wc.word_counts);
+  knex('decades').where({decade: decade}).first('word_counts').then((wc) => {
+    let array = JSON.parse(wc.word_counts.limit(500));
     res.json({data: array});
   });
 });
