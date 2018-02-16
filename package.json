@@ -7,12 +7,14 @@
     "lib": "lib"
   },
   "engines": {
-    "node": ">=8.1.0"
+    "npm": "3.10.10",
+    "node": "6.10.1"
   },
   "scripts": {
     "build": "webpack --watch",
     "start": "node app.js",
-    "start:debug": "DEBUG=* node app.js"
+    "start:debug": "DEBUG=* node app.js",
+    "postInstall": "npm run build"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
