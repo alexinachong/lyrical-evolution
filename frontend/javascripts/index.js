@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         text: ''
       }
     });
+    console.log("done");
   }
 
   function fetchData(yr) {
