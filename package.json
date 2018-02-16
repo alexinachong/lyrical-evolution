@@ -11,10 +11,10 @@
     "node": "6.10.1"
   },
   "scripts": {
-    "build": "webpack --watch",
+    "webpack": "webpack --watch",
     "start": "node app.js",
     "start:debug": "DEBUG=* node app.js",
-    "postinstall": "npm run build"
+    "postinstall": "webpack"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
