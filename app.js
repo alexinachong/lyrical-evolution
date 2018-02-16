@@ -10,9 +10,9 @@ var knex = require('knex')({
   connection: process.env.PG_CONNECTION_STRING
 });
 
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, './frontend/index.html'));
-// });
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, './frontend/index.html'));
+});
 //
 // app.use(express.static('frontend'));
 
