@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   function handleData(payload) {
-    data = payload;
+    data = payload.data;
     console.log(data);
     console.log("hi");
     Highcharts.chart('wordcloud', {
