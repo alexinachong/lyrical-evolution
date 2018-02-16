@@ -10,10 +10,27 @@ document.addEventListener('DOMContentLoaded', () => {
     return words;
   };
 
+  Highcharts.chart('wordcloud', {
+    chart: {
+      style: {
+        fontFamily: 'Raleway'
+      },
+      backgroundColor: '#e4edf4'
+    },
+    series: [{
+      type: 'wordcloud',
+      data: data,
+      name: 'Occurrences'
+    }],
+    title: {
+      text: ''
+    }
+  });
+
   function handleData(payload) {
     data = payload.data;
-    console.log(data);
-    console.log("hi");
+    // console.log(data);
+    // console.log("hi");
     Highcharts.chart('wordcloud', {
       chart: {
         style: {
@@ -30,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         text: ''
       }
     });
-    console.log("done");
+    // console.log("done");
   }
 
   function fetchData(yr) {
@@ -43,11 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const links = document.querySelectorAll('.decade-selector-item');
 
   function handleDecade(evt) {
-    console.log("Clicked!!");
-    console.log(evt);
+    // console.log("Clicked!!");
+    // console.log(evt);
     let yr = evt.target.innerHTML;
     decade = yr;
-    console.log(yr);
+    // console.log(yr);
     decadeTag.innerHTML = "Most common lyrics in the " + decade;
     fetchData(yr).then(payload => handleData(payload));
   }
