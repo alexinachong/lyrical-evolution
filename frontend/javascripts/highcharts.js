@@ -6,6 +6,7 @@ function testGetWords() {
   return wordsArr;
 }
 
+
 Highcharts.setOptions({
     chart: {
         style: {

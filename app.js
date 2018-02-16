@@ -4,6 +4,7 @@ const app = express();
 const path = require('path');
 const fetch = require('node-fetch');
 const PORT = process.env.PORT;
+// const PORT = 8000;
 
 var knex = require('knex')({
   client: 'pg',

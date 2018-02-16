@@ -1,17 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 });
-
 let decade = '1940s';
 
 let decadeTag = document.getElementById('decade-name');
 decadeTag.innerHTML = "Most common lyrics in the " + decade;
 
-function changeDecade(evt, yr) {
-  decade = yr;
-  decadeTag.innerHTML = "Most common lyrics in the " + decade;
 
-
-}
+// function changeDecade(evt, yr) {
+//   decade = yr;
+//   decadeTag.innerHTML = "Most common lyrics in the " + decade;
+// }
 
 let words = {};
 
@@ -38,12 +36,15 @@ function handleDecade(evt) {
   console.log("Clicked!!");
   console.log(evt);
   let yr = evt.target.innerHTML;
+  decade = yr;
+  decadeTag.innerHTML = "Most common lyrics in the " + decade;
   fetchData(yr);
 }
 
 links.forEach(link => {
   link.addEventListener('click', handleDecade);
 });
+
 
 // let decade = '1940s';
 //
