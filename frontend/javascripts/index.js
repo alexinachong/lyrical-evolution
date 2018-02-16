@@ -12,9 +12,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function handleData(payload) {
     data = payload;
-    console.log(words);
+    console.log(data);
     console.log("hi");
-    return words;
+    Highcharts.chart('wordcloud', {
+      chart: {
+        style: {
+          fontFamily: 'Raleway'
+        },
+        backgroundColor: '#e4edf4'
+      },
+      series: [{
+        type: 'wordcloud',
+        data: data,
+        name: 'Occurrences'
+      }],
+      title: {
+        text: ''
+      }
+    });
   }
 
   function fetchData(yr) {
@@ -127,20 +142,4 @@ Highcharts.setOptions({
 //
 // Highcharts.seriesTypes.wordcloud.prototype.spirals.archimedean = archimedeanSpiral;
 
-Highcharts.chart('wordcloud', {
-    chart: {
-        style: {
-            fontFamily: 'Raleway'
-        },
-        backgroundColor: '#e4edf4'
-    },
-    series: [{
-        type: 'wordcloud',
-        data: data,
-        name: 'Occurrences'
-    }],
-    title: {
-        text: ''
-    }
-});
 });
