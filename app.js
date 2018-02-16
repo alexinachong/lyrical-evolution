@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './frontend/index.html'));
 });
 //
-// app.use(express.static('frontend'));
+app.use(express.static('frontend'));
 
 app.get('/decade/:decade', (req, res) => {
   let decade = req.params.decade;
