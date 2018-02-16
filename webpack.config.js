@@ -7,6 +7,21 @@ const config = {
     filename: 'bundle.js',
     path: path.join(__dirname, './frontend')
   },
+  resolve: {
+    extensions: ['.js', '.jsx', '*']
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['env']
+        }
+      }
+    ]
+  },
   plugins: [
     new webpack.ProgressPlugin()
   ],

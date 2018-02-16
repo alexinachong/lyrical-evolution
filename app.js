@@ -6,27 +6,21 @@ const fetch = require('node-fetch');
 const PORT = 8000;
 
 var knex = require('knex')({
-  client: 'sqlite3',
-  connection: {
-    filename: "./lyrics.db"
-  }
+  client: 'pg',
+  connection: process.env.PG_CONNECTION_STRING
 });
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './frontend/index.html'));
-});
-
-app.use(express.static('frontend'));
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, './frontend/index.html'));
+// });
+// 
+// app.use(express.static('frontend'));
 
 app.get('/decade/:decade', (req, res) => {
-  let startingYr = req.params.decade;
-  let endingYr = (parseInt(req.params.decade) + 9).toString();
-  knex('songs').whereBetween('year', [startingYr, endingYr]).pluck('lyrics').then((lyrics) => {
-    let allLyrics = [];
-    lyrics.forEach((lyric, i) => {
-      allLyrics.push(lyric);
-    });
-    res.json({text: allLyrics});
+  let decade = req.params.decade;
+  knex('decades').where({decade: decade}).first('word_counts').then((wc) => {
+    let array = JSON.parse(wc.word_counts);
+    res.json({data: array});
   });
 });
 
