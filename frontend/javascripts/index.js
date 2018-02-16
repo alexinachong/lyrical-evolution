@@ -13,6 +13,38 @@ function changeDecade(evt, yr) {
 
 }
 
+let words = {};
+
+const getWords = () => {
+  return words;
+};
+
+function handleData(payload) {
+  words = payload;
+  console.log(words);
+  return words;
+}
+
+function fetchData(yr) {
+  $.ajax({
+    url: `decade/${yr}`,
+    method: 'GET'
+  }).then(payload => handleData(payload));
+}
+
+const links = document.querySelectorAll('.decade-selector-item');
+
+function handleDecade(evt) {
+  console.log("Clicked!!");
+  console.log(evt);
+  let yr = evt.target.innerHTML;
+  fetchData(yr);
+}
+
+links.forEach(link => {
+  link.addEventListener('click', handleDecade);
+});
+
 // let decade = '1940s';
 //
 // let decadeTag = document.getElementById("decade-name");
@@ -41,3 +73,5 @@ function changeDecade(evt, yr) {
 //   decade = yr;
 //   decadeTag.innerHTML = "Most common lyrics in the " + decade;
 // };
+
+export default getWords;

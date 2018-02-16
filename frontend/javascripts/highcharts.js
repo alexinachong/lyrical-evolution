@@ -1,3 +1,11 @@
+import getWords from './index';
+
+function testGetWords() {
+  let wordsArr = getWords();
+  console.log(wordsArr);
+  return wordsArr;
+}
+
 Highcharts.setOptions({
     chart: {
         style: {
@@ -53,6 +61,6 @@ Highcharts.chart('wordcloud', {
         name: 'Occurrences'
     }],
     title: {
-        text: 'Lyrics by Decade'
+        text: ''
     }
 });
