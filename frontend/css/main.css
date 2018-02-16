@@ -48,14 +48,15 @@ a:hover {
   justify-content: space-between;
 }
 
-.decade-selector a {
-  font-weight: 700;
+.decade-selector-item {
+  font-weight: 500;
   font-size: 20px;
   cursor: pointer;
 }
 
-.decade-selector-selected {
+.decade-selector a:focus {
   color: #000000;
+  font-weight: 700;
 }
 
 #wordcloud {

@@ -7,10 +7,52 @@ const PORT = 8000;
 
 app.use(express.static('frontend'));
 
+const sqlite3 = require('sqlite3').verbose();
+let db = new sqlite3.Database('lyrics.db');
+
+// db.run('CREATE TABLE songs(year text, lyrics text)');
+//
+// db.close();
+
+// db.all("SELECT year, lyrics FROM songs", function(err, rows) {
+//   rows.forEach(function(row) {
+//     console.log(row.year, row.lyrics);
+//   });
+// });
+
+// songs (
+//   id integer primary key,
+//   year integer,
+//   ranking integer,
+//   artist text,
+//   title text,
+//   raw_lyrics text,
+//   lyrics text
+// );
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './frontend/index.html'));
 });
+
+app.get('/decade/2000', (req, res) => {
+  let allLyrics = [];
+  db.each("SELECT lyrics FROM songs WHERE year BETWEEN 2000 AND 2009 LIMIT 5", function(err, row) {
+    allLyrics.push(row.lyrics);
+    console.log(allLyrics);
+      // res.json({ "lyrics" : row.lyrics });
+  });
+  return allLyrics;
+});
+
+// db.close();
+
+// app.get('/decade/1940', (req, res) => {
+//   db.get("SELECT lyrics FROM songs WHERE year BETWEEN 1940 AND 1949", function(err, rows) {
+//     rows.forEach(function(row) {
+//       res.json({ "lyrics" : row.lyrics });
+//     });
+//   });
+// });
 
 // app.get('/fighters', (req, res) => {
 //   let results;
