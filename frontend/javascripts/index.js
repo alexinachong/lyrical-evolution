@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
       series: [{
         type: 'wordcloud',
         data: data,
-        name: 'Occurrences'
+        name: 'Occurrences',
+        turboThreshold: 12000
       }],
       title: {
         text: ''
