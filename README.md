@@ -1,14 +1,5 @@
-# Simple Node Backend for avoiding CORS issues in development
+# Lyrical Evolution
 
-* `npm install`
-* `webpack`
-* `npm start`
+[Lyrical Evolution live](https://lyrical-evolution.herokuapp.com/)
 
-
-# Implementation
-
-This project allows you to serve your HTML and JS from a custom backend that performs API requests to an external API.
-
-`app.js` contains the routes that you need to get your data. Customize them according to the paths you wish to use in your code, and the API you wish to access
-
-Write your JS in the `javascripts` folder; your entry file is `index.js`.
+Lyrical Evolution is a data visualization tool comparing the lyrical themes of the top songs of each decade since the 1940s. It is built with Express on the backend and vanilla JavaScript/HTML5/CSS on the frontend.
