@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				style: {
 					fontFamily: 'Raleway'
 				},
-				backgroundColor: '#e4edf4'
+				backgroundColor: '#e9f3fc'
 			},
 			series: [
 				{
