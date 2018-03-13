@@ -1,12 +1,14 @@
 body {
 	font-family: 'Itim', 'Raleway', sans-serif;
 	background-color: #e4edf4;
+	font-size: 16px;
 }
 
 h1 {
 	font-family: 'Rock Salt', cursive, sans-serif;
+	color: #f45b5b;
 	text-align: center;
-	font-size: 36px;
+	font-size: 40px;
 	font-weight: 700;
 	padding: 20px;
 }
@@ -52,7 +54,7 @@ a:hover {
 
 .decade-selector-item {
 	font-weight: 500;
-	font-size: 20px;
+	font-size: 24px;
 	cursor: pointer;
 }
 
@@ -61,10 +63,36 @@ a:hover {
 	font-weight: 700;
 }
 
+#y-1940 {
+	color: #2b908f;
+}
+
+#y-1950 {
+	color: #f15c80;
+}
+#y-1960 {
+	color: #8085e9;
+}
+#y-1970 {
+	color: #f7a35c;
+}
+#y-1980 {
+	color: #2b908f;
+}
+#y-1990 {
+	color: #2b908f;
+}
+#y-2000 {
+	color: #2b908f;
+}
+#y-2010 {
+	color: #2b908f;
+}
+
 #decade-name {
 	text-align: center;
 	font-weight: 700;
-	font-size: 24px;
+	font-size: 28px;
 }
 
 #wordcloud {
