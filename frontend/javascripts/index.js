@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		let yr = evt.target.innerHTML;
 		decade = yr;
 		// console.log(yr);
-		decadeTag.innerHTML = 'Most common lyrics in the ' + decade;
+		decadeTag.innerHTML = `Most common lyrics in the ${decade}s`;
 		fetchData(yr).then(payload => handleData(payload));
 	}
 
