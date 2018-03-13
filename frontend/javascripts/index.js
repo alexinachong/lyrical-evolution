@@ -119,9 +119,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
-	let decade = '1940s';
+	let decade = '1940';
 	let decadeTag = document.getElementById('decade-name');
-	decadeTag.innerHTML = 'Most common lyrics in the ' + decade + 's';
+	decadeTag.innerHTML = `Most common lyrics in the ${decade}s`;
 
 	let words = {};
 
